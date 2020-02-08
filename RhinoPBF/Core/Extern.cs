@@ -16,5 +16,13 @@ namespace RhinoPBF.Core
         {
             return get_test_point();
         }
+
+        [DllImport("pbf_reader.dll")]
+        private static extern uint read_pbf(string path);
+
+        public static uint ReadPBF(string path)
+        {
+            return read_pbf(path);
+        }
     }
 }

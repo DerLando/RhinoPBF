@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Rhino;
 using Rhino.Commands;
 using Rhino.Geometry;
@@ -38,6 +39,9 @@ namespace RhinoPBF.Commands
             doc.Objects.AddPoint(point);
 
             doc.Views.Redraw();
+
+            var path = "D:\\Downloads\\bremen-latest.osm.pbf";
+            var count = Extern.ReadPBF(path);
 
             return Result.Success;
         }
