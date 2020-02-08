@@ -5,8 +5,9 @@ using Rhino.Commands;
 using Rhino.Geometry;
 using Rhino.Input;
 using Rhino.Input.Custom;
+using RhinoPBF.Core;
 
-namespace RhinoPBF
+namespace RhinoPBF.Commands
 {
     public class RhinoPBFCommand : Command
     {
@@ -32,6 +33,11 @@ namespace RhinoPBF
         protected override Result RunCommand(RhinoDoc doc, RunMode mode)
         {
             RhinoApp.WriteLine("The {0} command is under construction.", EnglishName);
+
+            var point = Core.Extern.GetTestPoint().ToPoint3d();
+            doc.Objects.AddPoint(point);
+
+            doc.Views.Redraw();
 
             return Result.Success;
         }

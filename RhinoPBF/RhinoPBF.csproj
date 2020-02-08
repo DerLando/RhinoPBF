@@ -53,12 +53,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RhinoPBFCommand.cs" />
+    <Compile Include="Core\Extensions.cs" />
+    <Compile Include="Core\Extern.cs" />
+    <Compile Include="Core\Point.cs" />
+    <Compile Include="Commands\RhinoPBFCommand.cs" />
     <Compile Include="RhinoPBFPlugIn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="EmbeddedResources\plugin-utility.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pbf_reader.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
